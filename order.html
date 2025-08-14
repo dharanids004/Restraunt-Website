@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Food</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">Spice Haven</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="index.html#menu">Menu</a>
+    <a href="index.html#booking">Book a Table</a>
+  </div>
+</nav>
+
+<section style="padding-top:100px; text-align:center;">
+  <h2 id="foodName"></h2>
+  <img id="foodImg" src="" alt="" style="max-width:500px; width:90%; border-radius:12px;">
+  <p id="foodPrice" style="font-size:20px; margin:10px 0;"></p>
+
+  <label for="qty">Quantity:</label>
+  <input type="number" id="qty" min="1" value="1" style="padding:6px; margin:5px; width:60px;">
+
+  <br><br>
+  <button class="cta" onclick="placeOrder()">Place Order</button>
+</section>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  const price = params.get("price");
+  const img = params.get("img");
+
+  document.getElementById("foodName").textContent = name;
+  document.getElementById("foodPrice").textContent = price;
+  document.getElementById("foodImg").src = img;
+
+  function placeOrder() {
+    const qty = document.getElementById("qty").value;
+    alert(`Order placed: ${qty} × ${name} (${price})`);
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>

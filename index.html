@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spice Haven Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<nav class="navbar">
+  <div class="logo">Spice Haven</div>
+  <div>
+    <a href="index.html" class="active">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#booking">Book a Table</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Signup</a>
+  </div>
+</nav>
+\
+<header class="hero-section">
+  <h1>Welcome to Spice Haven</h1>
+  <p>Delicious food, unforgettable taste</p>
+  <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+    Explore Menu
+  </button>
+</header>
+
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-grid">
+
+    <div class="card" onclick="goToOrder('Paneer Butter Masala', '₹250', 'https://images.unsplash.com/photo-1606756790138-6d1ecf3cf6d3?auto=format&fit=crop&w=1400&q=80')">
+      <img class="thumb" src="https://i.pinimg.com/1200x/75/25/c2/7525c28b815e93b8f4ad4a3bb889090e.jpg" alt="Paneer Butter Masala">
+      <div class="card-body">
+        <p class="name">Paneer Butter Masala</p>
+        <p class="price">₹250</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="goToOrder('Chicken Biryani', '₹300', 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80')">
+      <img class="thumb" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=70" alt="Chicken Biryani">
+      <div class="card-body">
+        <p class="name">Chicken Biryani</p>
+        <p class="price">₹300</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="goToOrder('Veg Pulao', '₹200', 'https://images.unsplash.com/photo-1606788075761-1c80aa4f1a9b?auto=format&fit=crop&w=1400&q=80')">
+      <img class="thumb" src="https://i.pinimg.com/736x/bd/dd/7f/bddd7ffc2b306c8008a3762aa3c1568b.jpg" alt="Veg Pulao">
+      <div class="card-body">
+        <p class="name">Veg Pulao</p>
+        <p class="price">₹200</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="booking">
+  <h2>Book a Table</h2>
+  <form class="form" onsubmit="return validateBooking()">
+    <input id="name" type="text" placeholder="Your Name" required>
+    <input id="email" type="email" placeholder="Your Email" required>
+    <select id="people" required>
+      <option value="">Number of People</option>
+      <option>1</option><option>2</option><option>3</option>
+      <option>4</option><option>5+</option>
+    </select>
+    <input id="date" type="date" required>
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 Spice Haven Restaurant
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Spice Haven</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="login.html" class="active">Login</a>
+    <a href="signup.html">Signup</a>
+  </nav>
+
+  <section class="form-section">
+    <h2>Login</h2>
+    <form class="form" onsubmit="return handleLogin()">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Spice Haven Restaurant
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
